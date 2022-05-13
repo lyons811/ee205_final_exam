@@ -7,13 +7,11 @@ public:
 };
 
 double Shape::computer_area() {
-    return 0;
+    return 0 ;
 }
 
 class Rectangle : public Shape {
 protected:
-
-
     double length{} ;
 
     double width{} ;
@@ -22,8 +20,22 @@ public:
 
     double computer_area() override ;
 
+    int i2{};
 
     Rectangle(double i, double i2);
+};
+
+
+
+class Square : public Rectangle {
+public:
+    explicit Square(double i);
+
+
+    double newSide{} ;
+
+    double getSide() ;
+
 };
 
 double Rectangle::validate(double newLength, double newWidth) {
@@ -38,17 +50,7 @@ double Rectangle::computer_area() {
     return area ;
 }
 
-class Square : public Rectangle {
-public:
-    explicit Square(double i);
 
-
-    double newSide{} ;
-
-    double getSide() ;
-
-    int i2{};
-};
 
 double Square::getSide() {
     return length ;
@@ -60,12 +62,11 @@ Square::Square(double i) : Rectangle(i, i2) {
 
 }
 
-
-
 Rectangle::Rectangle(double i, double i2) {
-    i = length ;
+    i = length;
     i2 = width ;
 }
+
 
 int main() {
     std::cout << "Hello, World!" << std::endl;
